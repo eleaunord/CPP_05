@@ -26,13 +26,16 @@ class AForm
 		virtual ~AForm();
 		
 		// getters
-		const std::string &getAFormName() const;
+		const std::string &getFormName() const;
 		bool getIsSigned() const;
 		int getGradeToSign() const;
 		int getGradeToExec() const;
 
 		// member functions
 		bool beSigned(const Bureaucrat & bureaucrat); // change AForm status
+
+		// pure virtual method
+		virtual void execute(Bureaucrat const & executor) const = 0;
 
 		class GradeTooHighException : public std::exception
 		{
@@ -44,6 +47,12 @@ class AForm
 			public :
 				virtual const char *what() const throw();
 		};
+		class NotSignedException : public std::exception
+		{
+			public :
+				virtual const char *what() const throw();
+		};
+		
 };
 
 std::ostream &operator<<(std::ostream &os, const AForm &AForm);

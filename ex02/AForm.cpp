@@ -34,7 +34,7 @@ AForm::~AForm()
 	std::cout << "AForm destructor called" << std::endl;
 }
 
-const std::string &AForm::getAFormName() const
+const std::string &AForm::getFormName() const
 {
 	return _name;
 }
@@ -57,7 +57,7 @@ bool AForm::getIsSigned() const
 
 std::ostream &operator<<(std::ostream &os, const AForm &AForm)
 {
-	os << AForm.getAFormName() << ", is signed: " << (AForm.getIsSigned() ? "Yes" : "No") << ", grade required to sign it: " << AForm.getGradeToSign() << ", grade required to execute it: " << AForm.getGradeToExec();
+	os << AForm.getFormName() << ", is signed: " << (AForm.getIsSigned() ? "Yes" : "No") << ", grade required to sign it: " << AForm.getGradeToSign() << ", grade required to execute it: " << AForm.getGradeToExec();
 	return os;
 }
 
@@ -74,6 +74,15 @@ bool AForm::beSigned(const Bureaucrat &bureaucrat)
 	}
 }
 
+void AForm::execute(const Bureaucrat &executor) const
+{
+	if (!_isSigned)
+		throw NotSignedException();
+	else if (executor.getGrade() > _gradeToExec)
+		throw GradeTooLowException();
+
+}
+
 const char *AForm::GradeTooHighException::what() const throw()
 {
 	return "Grade too high mate!";
@@ -82,4 +91,9 @@ const char *AForm::GradeTooHighException::what() const throw()
 const char *AForm::GradeTooLowException::what() const throw()
 {
 	return "Grade too low mate!";
+}
+
+const char *AForm::NotSignedException::what() const throw()
+{
+	return "Form not signed mate!";
 }

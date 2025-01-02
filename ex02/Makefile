@@ -1,8 +1,8 @@
-NAME = ex01
+NAME = ex02
 COMPILER = c++
 CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRCS = main.cpp Bureaucrat.cpp Form.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
 

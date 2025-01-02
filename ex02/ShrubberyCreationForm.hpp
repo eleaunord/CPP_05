@@ -5,14 +5,16 @@
 #include <exception>
 
 #include "Bureaucrat.hpp"
+#include <fstream>
 
 // concrete class derived from class AForm
 
 
-class ShrubberyCreationForm
+class ShrubberyCreationForm : public AForm
 {
 private:
 	const std::string _target; // target of the form
+	// set grades in constructor(?)
 
 public:
 	// constructors & destructor
@@ -23,20 +25,10 @@ public:
 	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &copy);
 	~ShrubberyCreationForm();
 
-	// getters
+	// override execute function
+	void execute(Bureaucrat const &executor) const;
 
-
-	class GradeTooHighException : public std::exception
-	{
-	public:
-		virtual const char *what() const throw();
-	};
-	class GradeTooLowException : public std::exception
-	{
-	public:
-		virtual const char *what() const throw();
-	};
 };
 
-std::ostream &operator<<(std::ostream &os, const ShrubberyCreationForm &ShrubberyCreationForm);
+
 #endif
