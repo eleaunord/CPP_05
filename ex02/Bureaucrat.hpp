@@ -4,6 +4,10 @@
 #include <iostream>
 #include <exception>
 
+#include "Form.hpp"
+
+class Form;
+
 class Bureaucrat
 {
 	private :
@@ -15,7 +19,7 @@ class Bureaucrat
 		// default constructor
 		Bureaucrat();
 		// parameterized constructor
-		Bureaucrat(std::string &name, int grade);
+		Bureaucrat(const std::string &name, int grade);
 		// copy constructor
 		Bureaucrat(const Bureaucrat &rhs);
 		// assignment operator (only grade can be reassigned)
@@ -31,8 +35,11 @@ class Bureaucrat
 		void incrementGrade(int num); // => grade too high exception
 		void decrementGrade(int num); // => grade too low exception
 
+		// new
+		void signForm(Form &form) const;
+
 		// EXCEPTIONS
-		class GradeTooHighException: public std::exception
+		class GradeTooHighException : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
