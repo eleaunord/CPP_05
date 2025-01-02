@@ -1,6 +1,6 @@
 #include "AForm.hpp"
 
-AForm::AForm() : _name("Default"), _isSigned(false), _gradeToSign(42), _gradeToExec(42)
+AForm::AForm() : _name("AForm Default"), _isSigned(false), _gradeToSign(42), _gradeToExec(42)
 {
 	std::cout << "AForm's default constructor called" << std::endl;
 }

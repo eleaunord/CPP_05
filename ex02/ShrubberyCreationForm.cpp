@@ -1,8 +1,10 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : _target("Default")
+// here we explicitly requests the parameterized constructor of AForm, overriding the implicit behavior where the default constructor of AForm would be called if no initializer is provided.
+ShrubberyCreationForm::ShrubberyCreationForm()
+    : AForm("ShrubberyCreationForm", 145, 137), _target("DefaultShrubberyCreationForm")
 {
-	std::cout << "ShrubberyCreationForm's default constructor called" << std::endl;
+    std::cout << "ShrubberyCreationForm's default constructor called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreationForm", 145, 137), _target(target)

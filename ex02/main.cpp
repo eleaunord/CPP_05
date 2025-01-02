@@ -49,6 +49,33 @@ int main()
 		
 		std::cout << std::endl;
 
+        std::cout << "\n--- Testing Default Constructors ---\n";
+
+        Bureaucrat defaultBureaucrat; // Using default constructor
+        std::cout << "Default Bureaucrat: Name = " << defaultBureaucrat.getName()
+                  << ", Grade = " << defaultBureaucrat.getGrade() << std::endl;
+
+        std::cout << std::endl;
+
+        ShrubberyCreationForm defaultShrubbery; // Using default constructor
+        std::cout << "Default ShrubberyCreationForm: Name = " << defaultShrubbery.getFormName()
+                  << ", Required Grades: Sign = " << defaultShrubbery.getGradeToSign()
+                  << ", Exec = " << defaultShrubbery.getGradeToExec() << std::endl;
+
+        std::cout << std::endl;
+
+        RobotomyRequestForm defaultRobotomy; // Using default constructor
+        std::cout << "Default RobotomyRequestForm: Name = " << defaultRobotomy.getFormName()
+                  << ", Required Grades: Sign = " << defaultRobotomy.getGradeToSign()
+                  << ", Exec = " << defaultRobotomy.getGradeToExec() << std::endl;
+
+        std::cout << std::endl;
+
+        PresidentialPardonForm defaultPardon; // Using default constructor
+        std::cout << "Default PresidentialPardonForm: Name = " << defaultPardon.getFormName()
+                  << ", Required Grades: Sign = " << defaultPardon.getGradeToSign()
+                  << ", Exec = " << defaultPardon.getGradeToExec() << std::endl;
+        std::cout << std::endl;
     }
     catch (const std::exception &e)
     {

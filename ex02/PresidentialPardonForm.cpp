@@ -1,6 +1,8 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : _target("Default")
+// here we explicitly requests the parameterized constructor of AForm, overriding the implicit behavior where the default constructor of AForm would be called if no initializer is provided.
+PresidentialPardonForm::PresidentialPardonForm()
+	: AForm("PresidentialPardonForm", 25, 5), _target("DefaultPresidentialPardonForm")
 {
 	std::cout << "PresidentialPardonForm's default constructor called" << std::endl;
 }

@@ -1,6 +1,8 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : _target("Default")
+// here we explicitly requests the parameterized constructor of AForm, overriding the implicit behavior where the default constructor of AForm would be called if no initializer is provided.
+RobotomyRequestForm::RobotomyRequestForm()
+	: AForm("RobotomyRequestForm", 72, 45), _target("DefaultRobotomyRequestForm")
 {
 	std::cout << "RobotomyRequestForm's default constructor called" << std::endl;
 }
