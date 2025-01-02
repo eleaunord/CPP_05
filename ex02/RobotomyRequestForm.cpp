@@ -36,10 +36,16 @@ RobotomyRequestForm::~RobotomyRequestForm()
 // generate random number with rand()
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-    AForm::execute(executor);
-    std::cout << "DRRRrrrrrrrrrrr (drilling noises)" << std::endl;
-    if (rand() % 2)
-        std::cout<<"The target has been robotomized!" << std::endl;
-    else
-        std::cout<< "The robotomy failed!" << std::endl;
+	if (!this->getIsSigned())
+		throw AForm::NotSignedException();
+	else if (executor.getGrade() > this->getGradeToExec())
+		throw AForm::GradeTooLowException();
+
+	std::cout << this->_target << " DRRRrrrr (drilling noises) " << std::endl;
+
+	srand(time(NULL));
+	if (rand() % 2)
+		std::cout << this->_target << " has been robotomized!" << std::endl;
+	else
+		std::cout << this->_target << "'s robotomy failed!" << std::endl;
 }
