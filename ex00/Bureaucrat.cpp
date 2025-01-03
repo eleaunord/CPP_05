@@ -4,7 +4,7 @@ Bureaucrat::Bureaucrat() : _name("Default"), _grade(42)
 {
 	std::cout << "Bureaucrat's default constructor called" << std::endl;
 }
-Bureaucrat::Bureaucrat(std::string &name, int grade) : _name(name), _grade(grade)
+Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade(grade)
 {
 	if (grade < 1)
 	{
@@ -26,6 +26,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copy)
 {
 	if (this != &copy)
 	{
+		// _name is const, so we only copy _grade
 		this->_grade = copy._grade;
 	}
 	std::cout << "Bureaucrat copy operator called" << std::endl;

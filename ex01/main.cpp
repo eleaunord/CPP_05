@@ -26,6 +26,7 @@ int main()
 		std::cout << bob << std::endl;
 		std::cout << charlie << std::endl;
 		std::cout << fattah << std::endl;
+
 		std::cout << std::endl;
 		std::cout << taxForm << std::endl;
 		std::cout << visaForm << std::endl;
@@ -37,7 +38,7 @@ int main()
 		alice.signForm(taxForm); // succeed
 		bob.signForm(taxForm);	 // fail (grade too low)
 		bob.signForm(visaForm);	 // succeed
-		charlie.signForm(vipForm); // fail (grade too high)
+		charlie.signForm(vipForm); // succeed
 		fattah.signForm(investForm); // fail (grade too low)
 		std::cout << std::endl;
 

@@ -36,10 +36,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 // generate random number with rand()
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-	if (!this->getIsSigned())
-		throw AForm::NotSignedException();
-	else if (executor.getGrade() > this->getGradeToExec())
-		throw AForm::GradeTooLowException();
+	AForm::execute(executor);
 
 	std::cout << this->_target << " DRRRrrrr (drilling noises) " << std::endl;
 

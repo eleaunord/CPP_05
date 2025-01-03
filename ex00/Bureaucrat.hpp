@@ -15,7 +15,7 @@ class Bureaucrat
 		// default constructor
 		Bureaucrat();
 		// parameterized constructor
-		Bureaucrat(std::string &name, int grade);
+		Bureaucrat(const std::string &name, int grade);
 		// copy constructor
 		Bureaucrat(const Bureaucrat &rhs);
 		// assignment operator (only grade can be reassigned)

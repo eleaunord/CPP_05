@@ -9,7 +9,7 @@ int main()
     // Test 1: Bureaucrat and Form Creation
     try
     {
-        std::cout << "\n--- Test 1: Bureaucrat and Form Creation ---\n";
+        std::cout << "\n Test 1: Bureaucrat and Form Creation \n";
 
         Bureaucrat alice("Alice", 50);
         Bureaucrat chat("Chat", 140);
@@ -27,7 +27,7 @@ int main()
     // Test 2: Signing Forms
     try
     {
-        std::cout << "\n--- Test 2: Signing Forms ---\n";
+        std::cout << "\n Test 2: Signing Forms \n";
 
         Bureaucrat alice("Alice", 50);
         Bureaucrat chat("Chat", 140);
@@ -53,7 +53,7 @@ int main()
     // Test 3: Executing Forms
     try
     {
-        std::cout << "\n--- Test 3: Executing Forms ---\n";
+        std::cout << "\n Test 3: Executing Forms \n";
 
         Bureaucrat alice("Alice", 50);
         Bureaucrat chat("Chat", 140);
@@ -65,17 +65,17 @@ int main()
         
         // WORKS
         std::cout << std::endl;
-        std::cout << "\n--- Testing PresidentialPardonForm ---\n";
+        std::cout << "\n Testing PresidentialPardonForm \n";
         pardon.beSigned(chapelier);
         pardon.execute(chapelier);
 
         std::cout << std::endl;
-        std::cout << "\n--- Testing ShrubberyCreationForm (check file creation) ---\n";
+        std::cout << "\n Testing ShrubberyCreationForm (check file creation) \n";
         shrubbery.beSigned(chapelier);
         shrubbery.execute(chapelier);
 
         std::cout << std::endl;
-        std::cout << "\n--- Testing RobotomyRequestForm ---\n";
+        std::cout << "\n Testing RobotomyRequestForm \n";
         robotomy.beSigned(chapelier);
         robotomy.execute(chapelier);
 
@@ -98,7 +98,7 @@ int main()
     // Test 4: Exceptions During Execution
     try
     {
-        std::cout << "\n--- Test 4: Exceptions During Execution ---\n";
+        std::cout << "\n Test 4: Exceptions During Execution \n";
 
         Bureaucrat alice("Alice", 50);
         Bureaucrat chat("Chat", 140);
@@ -152,7 +152,7 @@ int main()
     // Test 5: Using Default Constructors
     try
     {
-        std::cout << "\n--- Test 5: Using Default Constructors ---\n";
+        std::cout << "\n Test 5: Using Default Constructors \n";
 
         Bureaucrat defaultBureaucrat;
         std::cout << "Default Bureaucrat: Name = " << defaultBureaucrat.getName()

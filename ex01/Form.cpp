@@ -61,12 +61,11 @@ std::ostream &operator<<(std::ostream &os, const Form &form)
 	return os;
 }
 
-bool Form::beSigned(const Bureaucrat &bureaucrat)
+void Form::beSigned(const Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() <= _gradeToSign)
 	{
 		_isSigned = true;
-		return true;
 	}
 	else
 	{

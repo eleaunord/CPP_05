@@ -4,13 +4,13 @@
 #include "PresidentialPardonForm.hpp"
 #include "Bureaucrat.hpp"
 #include <iostream>
-#include <cassert> // For assertions
+#include <cassert> 
 
 int main()
 {
     try
     {
-        std::cout << "\n--- Intern Class Testing ---\n";
+        std::cout << "\n Intern Class Testing \n";
 
         // Create an Intern
         Intern someRandomIntern;
@@ -18,7 +18,7 @@ int main()
         // Test cases for valid form creation
         try
         {
-            std::cout << "\n--- Testing Valid Form Creation ---\n";
+            std::cout << "\n Testing Valid Form Creation \n";
 
             // Create a ShrubberyCreationForm
             AForm *shrubForm = someRandomIntern.makeForm("ShrubberyCreationForm", "Home");
@@ -43,7 +43,7 @@ int main()
         // Test case for invalid form creation
         try
         {
-            std::cout << "\n--- Testing Invalid Form Creation ---\n";
+            std::cout << "\n Testing Invalid Form Creation \n";
             AForm *invalidForm = someRandomIntern.makeForm("InvalidFormType", "Target");
             delete invalidForm; // This line will never be reached
         }
@@ -55,7 +55,7 @@ int main()
         // Test signing a form
         try
         {
-            std::cout << "\n--- Testing Form Signing ---\n";
+            std::cout << "\n Testing Form Signing \n";
 
             Bureaucrat bob("Bob", 50); // Bob has a grade sufficient for signing RobotomyRequestForm
             AForm *robotForm = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");

@@ -32,7 +32,7 @@ class AForm
 		int getGradeToExec() const;
 
 		// member functions
-		bool beSigned(const Bureaucrat & bureaucrat); // change AForm status
+		void beSigned(const Bureaucrat & bureaucrat); // change AForm status
 
 		// pure virtual method
 		virtual void execute(Bureaucrat const & executor) const = 0;

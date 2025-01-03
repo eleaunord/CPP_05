@@ -36,15 +36,15 @@ int main()
 	std::cout << std::endl;
 	try
 	{
-		Bureaucrat bob("Bob", 148);
-		std::cout << bob << std::endl;
+		Bureaucrat chat("Chat", 148);
+		std::cout << chat << std::endl;
 
 		// valid
-		bob.decrementGrade(2);
-		std::cout << "After downgrading: " << bob << std::endl;
+		chat.decrementGrade(2);
+		std::cout << "After downgrading: " << chat << std::endl;
 
 		//invalid (too low)
-		bob.decrementGrade(3);
+		chat.decrementGrade(3);
 		std::cout << "This line won't be printed out because exception will be thrown. " << std::endl;
 	}
 	catch (const std::exception &e)
@@ -55,14 +55,14 @@ int main()
 	try
 	{
 		// NO
-		Bureaucrat bobby("Bobby", 4);
+		Bureaucrat chapelier("Chapelier", 4);
 
 		// valid
-		bobby.incrementGrade(2);
-		std::cout << "After incrementing: " << bobby << std::endl;
+		chapelier.incrementGrade(2);
+		std::cout << "After incrementing: " << chapelier << std::endl;
 
 		// invalid (too high)
-		bobby.incrementGrade(2);
+		chapelier.incrementGrade(2);
 		std::cout << "This line won't be printed out because exception will be thrown. " << std::endl;
 	}
 	catch(const std::exception& e)
@@ -92,6 +92,7 @@ int main()
 	{
 		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
+
 
 	return 0;
 }
