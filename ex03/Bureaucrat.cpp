@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name("Default"), _grade(42)
+Bureaucrat::Bureaucrat() : _name("Bureaucrat Default"), _grade(42)
 {
 	std::cout << "Bureaucrat's default constructor called" << std::endl;
 }
@@ -90,33 +90,32 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 	return "Grade too low mate!";
 }
 
-void Bureaucrat::signForm(Form &form) const
+void Bureaucrat::signForm(AForm &form) const
 {
 	try
 	{
 		form.beSigned(*this); 
-		std::cout << getName() << " signed " << form.getName() << std::endl;
+		std::cout << getName() << " signed " << form.getFormName() << std::endl;
 	}
 	catch (const std::exception &e)
 	{
 
-		std::cout << getName() << " couldn’t sign " << form.getName()
+		std::cout << getName() << " couldn’t sign " << form.getFormName()
 				  << " because " << e.what() << std::endl;
 	}
 }
 
-void Bureaucrat::executeForm(Form &form) const
+void Bureaucrat::executeForm(AForm const & form)
 {
 	try
 	{
-		form.execute(*this);
-		
-		std::cout << getName() << " signed " << form.getName() << std::endl;
+		form.execute(*this); 
+		std::cout << getName() << " executes " << form.getFormName() << std::endl;
 	}
 	catch (const std::exception &e)
 	{
 
-		std::cout << getName() << " couldn’t sign " << form.getName()
+		std::cout << getName() << " cannot execute " << form.getFormName()
 				  << " because " << e.what() << std::endl;
 	}
 }

@@ -44,6 +44,7 @@
 		"iosfwd": "cpp",
 		"iostream": "cpp",
 		"limits": "cpp",
-		"numbers": "cpp"
+		"numbers": "cpp",
+		"fstream": "cpp"
 	}
 }

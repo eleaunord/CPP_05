@@ -34,7 +34,7 @@ Form::~Form()
 	std::cout << "Form destructor called" << std::endl;
 }
 
-const std::string &Form::getFormName() const
+const std::string &Form::getName() const
 {
 	return _name;
 }
@@ -57,7 +57,7 @@ bool Form::getIsSigned() const
 
 std::ostream &operator<<(std::ostream &os, const Form &form)
 {
-	os << form.getFormName() << ", is signed: " << (form.getIsSigned() ? "Yes" : "No") << ", grade required to sign it: " << form.getGradeToSign() << ", grade required to execute it: " << form.getGradeToExec();
+	os << form.getName() << ", is signed: " << (form.getIsSigned() ? "Yes" : "No") << ", grade required to sign it: " << form.getGradeToSign() << ", grade required to execute it: " << form.getGradeToExec();
 	return os;
 }
 

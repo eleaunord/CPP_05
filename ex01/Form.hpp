@@ -26,7 +26,7 @@ class Form
 		~Form();
 		
 		// getters
-		const std::string &getFormName() const;
+		const std::string &getName() const;
 		bool getIsSigned() const;
 		int getGradeToSign() const;
 		int getGradeToExec() const;
